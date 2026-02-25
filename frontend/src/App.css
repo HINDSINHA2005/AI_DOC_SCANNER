@@ -1,0 +1,198 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #1e1e1e;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.sidebar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.sidebar button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #111827;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: #374151;
+}
+
+/* Scan Animation */
+.scan-wrapper {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.scan-doc {
+  width: 170px;
+  height: 220px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-doc::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: #e5e7eb;
+  box-shadow: 0 20px #e5e7eb, 0 40px #e5e7eb, 0 60px #e5e7eb;
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  animation: scanMove 1.8s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Chat Area */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Messages */
+.message {
+  max-width: 55%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* User Bubble */
+.user {
+  background: #111827;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+/* AI Bubble */
+.ai {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  border-bottom-left-radius: 4px;
+}
+
+/* System */
+.system {
+  margin: auto;
+  background: #f3f4f6;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #6b7280;
+}
+
+/* Typing */
+.typing {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-area button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.input-area button:hover {
+  background: #374151;
+}
